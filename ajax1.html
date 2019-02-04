@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang= "en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content=width=device-width, intiial-scale1.0"
+    <meta http-equiv="X-UA-compatible", content="ie-edge">
+    <title>Ajax 1 - Text File</title>
+</head>
+    
+<body>
+    
+    <button id="button">Get Text File</button>
+    
+    <script>
+    //crerate an event listener
+    document.getElementById("button").addEventListener('click', loadText);
+    
+    function loadText() {
+// create the XMR object
+    var xhr = new XMLHttpRequest();
+// OPEN - type, url/file, async
+      xhr.open('GET', 'sample.txt', true);
+      
+      xhr.onload = function() {
+      if(this.status == 200) {
+      console.log(this.responseText);
+      
+      }
+     }
+//sends request     
+     xhr.send();
+    }
+// http statuses
+// 200: "ok"
+// 403: "forbidden"
+// 404: "not found"
+
+</script>
+</body>
+    
+    
+    
+</html>
